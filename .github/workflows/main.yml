@@ -16,3 +16,9 @@ jobs:
           bump_version_scheme: minor
           tag_prefix: ""
           use_github_release_notes: true
+
+  deployment:
+    needs: release-on-push
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
